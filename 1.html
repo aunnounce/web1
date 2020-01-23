@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>WEB1 - html</title>
+    <meta charset="utf-8"
+  </head>
+  <body>
+    <h1><a href="index.html">WEB</a></h1>
+    <ol>
+      <li><a href="1.html">HTML</a></li>
+      <li><a href="2.html">CSS</a></li>
+      <li><a href="3.html">JavaScrips</a></li>
+    </ol>
+    <h2>Coding이란 무엇인가?</h2>
+    <p>구글 뉴스는 구글이 제공하고 운영하는 <strong>무료</strong> 뉴스 애그리게이터이다.<br>
+    <strong>자동 집계 <u>알고리즘</u></strong>에 의해 수천 곳의 발행사로부터 최신의 정보를 선별한다.</p>
+    <img src="coding.jpg" width="50%">
+    <p style="margin-top:40px;">현 총괄자는 리처드 징그러스이다.
+    2002년 9월 출범한 이 서비스는 2006년 1월까지 3년에 걸쳐 베타 테스트로 표기되었다.
+    만일, 이런 공격을 방어하고자 한다면,
+    <strong>WM_CLOSE를 Skip 하도록 코딩</strong>하면 됩니다.<br>
+    즉, OnClose()에서 기본 함수 호출을 하지 않도록 하는 것입니다.<br></p>
+    <p>
+    허나, <a href="https://www.w3.org/TR/html51/" target="_blank" title="html5 speicification">
+    <u>Internet Explorer_Hidden</u></a> 같은 경우에는,<br>
+    OS에서 생성하고 관리하기 때문에,<br>
+    WM_CLOSE를 Skip 하려면 Internet Explorer_Hidden의 WNDPROC을 subclassing 해야 합니다.<br></p>
+    <p>
+    다음과 같이 <strong>subclass</strong>을 하면 되니 참고하시기 바랍니다.<br>
+    물론, 여기에서는 <strong>WM_CLOSE</strong> 방어이지만,<br>
+    다른 응용도 가능하니, 도움이 되리라 생각됩니다.<br></p>
+    <p>
+    전체적인 흐름은,<br>
+    <strong>1.실행 Process에서 WM_CREATE Hook<br>
+    2.Internet Explorer_Hidden가 생성되는 것을 포착<br>
+    3.새로운 WNDPROC으로 subclassing<br>
+    4.해당 함수에서 WM_CLOSE를 무시함</strong> 과 같습니다.<br></p>
+    <p >수정될 Class는 theApp이 해당됩니다. 즉, <strong>CWinApp</strong> 입니다.
+    (물론 다른 class에서 사용해도 됩니다.)<br>
+    아래 부분을 theApp의 header 파일에 추가합니다.</p>
+  </body>
+ </html>
